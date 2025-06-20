@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "testmodminecraft:item/suspicious_substance"
+  }
+}

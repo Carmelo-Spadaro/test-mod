@@ -2,11 +2,15 @@ package com.example;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.ItemGroups;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import net.minecraft.item.Item;
+
 public class ExampleMod implements ModInitializer {
-	public static final String MOD_ID = "modid";
+	public static final String MOD_ID = "testmodminecraft";
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -20,5 +24,10 @@ public class ExampleMod implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Initializing items");
+		ModItems.initialize();
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
+				.register((itemGroup) -> itemGroup.add(ModItems.SUSPICIOUS_SUBSTANCE));
+
 	}
 }
