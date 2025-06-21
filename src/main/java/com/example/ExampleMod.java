@@ -2,12 +2,8 @@ package com.example;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.ItemGroups;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import net.minecraft.item.Item;
 
 public class ExampleMod implements ModInitializer {
 	public static final String MOD_ID = "testmodminecraft";
@@ -24,8 +20,8 @@ public class ExampleMod implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
-		LOGGER.info("Initializing items");
-		ModItems.initialize();
+		LOGGER.info("Initializing Features");
+		ModFeatures.initializeAll();
 
 	}
 }
